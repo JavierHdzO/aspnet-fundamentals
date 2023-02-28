@@ -1,7 +1,11 @@
+using fundamentals_dotnet.Interfaces;
+using fundamentals_dotnet.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddScoped<IMyDependecy, MyDependency2>();
 
 var app = builder.Build();
 
@@ -23,3 +27,5 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+
